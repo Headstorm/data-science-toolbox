@@ -1,0 +1,1 @@
+The goal of this directory is a central location with easy access to data that can be run for all models implemented. Add any form of datasets here so when the repo is cloned devs have easy access to datasets. Keep them small too. Let's aim for a variety of formats (csv, txt, h5, json, etc..)
