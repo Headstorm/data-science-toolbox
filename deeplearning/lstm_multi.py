@@ -64,45 +64,6 @@ def prep_dataset(path ,year ,month ,day ,hour ,
 
 
 
-#======= INPUT REQUIREMENTS
-# year
-# month
-# day
-# hour
-# <dependent_variable name>
-# <numerical feature1>
-# <numerical feature2>
-# <numerical featureN>
-# <caterical feature1>
-# <caterical feature2>
-# <caterical featureM>
-#
-# Additional requirements
-# - year, month, day, hour must be present in the data for hourly data,  
-#    if daily data set hour =0 for all rows
-# - time series data must have the same sequential interval of time
-# - there should not be any gap in the date sequence
-#==============================data information
-#final_x = ["pollution" ,"dew" ,"temp"  ,"press","wnd_dir", "wnd_spd" ,"snow",  "rain"]
-cat_features = ["wnd_dir"]
-num_features = ["dew" ,"temp","press","wnd_dir" ,"snow",  "rain"]
-y_name = "pollution"
-
-################INPUT PARAMETERS=====================================
-data_is_hourly = True
-n_years_used = 2  # number of years to use in training
-#cat_indices = [4]   # position number of features (and label) in the dataset
-epochs  = 50   # number of time to scan data
-n_layers = 50   # number of Recurrent Neural network Layers
-max_lags = 1    # max number of lags
-pred_lead = 1   #number of prediction steps - in hour for hourly data
-
-n_hours = 3   # number of lag steps for each feature
-
-data_path = '/Users/aokossi/Documents/ds-projects/datasets'   # data folder
-input_file_name = 'pollution_input_data.csv'  # input file name - must abide with input requirements
-#==================================================
-
 def main():
     
     final_x = [y_name]+num_features+cat_features
@@ -176,4 +137,44 @@ def main():
     pyplot.show()
 
 if __name__=="__main__":
+
+    #======= INPUT REQUIREMENTS
+    # year
+    # month
+    # day
+    # hour
+    # <dependent_variable name>
+    # <numerical feature1>
+    # <numerical feature2>
+    # <numerical featureN>
+    # <caterical feature1>
+    # <caterical feature2>
+    # <caterical featureM>
+    #
+    # Additional requirements
+    # - year, month, day, hour must be present in the data for hourly data,  
+    #    if daily data set hour =0 for all rows
+    # - time series data must have the same sequential interval of time
+    # - there should not be any gap in the date sequence
+    #==============================data information
+    #final_x = ["pollution" ,"dew" ,"temp"  ,"press","wnd_dir", "wnd_spd" ,"snow",  "rain"]
+    cat_features = ["wnd_dir"]
+    num_features = ["dew" ,"temp","press","wnd_dir" ,"snow",  "rain"]
+    y_name = "pollution"
+
+    ################INPUT PARAMETERS=====================================
+    data_is_hourly = True
+    n_years_used = 2  # number of years to use in training
+    #cat_indices = [4]   # position number of features (and label) in the dataset
+    epochs  = 50   # number of time to scan data
+    n_layers = 50   # number of Recurrent Neural network Layers
+    max_lags = 1    # max number of lags
+    pred_lead = 1   #number of prediction steps - in hour for hourly data
+
+    n_hours = 3   # number of lag steps for each feature
+
+    data_path = '/Users/aokossi/Documents/ds-projects/datasets'   # data folder
+    input_file_name = 'pollution_input_data.csv'  # input file name - must abide with input requirements
+    #==================================================
+
     main()
