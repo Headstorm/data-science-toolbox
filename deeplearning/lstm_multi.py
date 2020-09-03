@@ -43,25 +43,6 @@ def series_to_supervised(data, n_in=1, n_out=1, dropnan=True):
 		agg.dropna(inplace=True)
 	return agg
 
-def prep_dataset(path ,year ,month ,day ,hour ,
-    x_names,
-    y_name ,
-    drops,max_lags):
-    dataset = read_csv(path) # ,  parse_dates = [[year, month, day, hour]], index_col=0, date_parser=parse)
-    dataset = dataset.reset_index()
-    dd = dataset.copy()
-    for c in dd.columns:
-        if (c  in drops) :
-            dataset.drop(c, axis=1, inplace=True)
-    dataset = psql.sqldf("""
-    select a1.* from dataset a1 order by a1.{year},a1.{month},a1.{day},a1.{hour}
-    """.format(year=year,month=month,day=day,hour=hour)) 
-    dataset[ y_name] = dataset[y_name].apply(lambda x:x if x>0 else 0.0)#fillna(0, inplace=True)
-    # drop the first max_lags observations
-    dataset = dataset[max_lags:]
-    dataset.to_csv('./datasets/pollution.csv')
-    return dataset
-
 
 
 def main():
