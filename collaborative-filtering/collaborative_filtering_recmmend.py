@@ -123,7 +123,7 @@ print(cust_count)
 rating_count = df['UserId'].count() - product_count
 print("Rating count")
 print(rating_count)
-# =============Som cleaning===============================
+# =============Some cleaning===============================
 
 
 df_nan = pd.DataFrame(pd.isnull(df.Rating))
