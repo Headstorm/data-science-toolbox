@@ -1,3 +1,6 @@
+#===============================================
+# Coded by Alphonse Okossi
+#===============================================
 import numpy as np
 import pandas as pd   
 import pandasql as psql
