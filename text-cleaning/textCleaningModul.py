@@ -70,6 +70,13 @@ def count_vector(text):
     vector = vectorizer.transform(text)
     return vector
 
+def tfidf(documents):
+    no_features = 1000
+	tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_features=no_features, stop_words='english')
+	tfidf = tfidf_vectorizer.fit_transform(documents)
+	tfidf_feature_names = tfidf_vectorizer.get_feature_names()
+	print(tfidf_feature_names)
+
 
 if __name__ == '__main__':
     # load text
