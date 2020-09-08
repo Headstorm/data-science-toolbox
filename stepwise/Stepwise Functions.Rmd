@@ -1,0 +1,65 @@
+---
+title: "Stepwise Modeling"
+author: "Clay Moore"
+date: "9/8/2020"
+output: rmarkdown::github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(MASS)
+```
+
+
+## Stepwise Functions
+
+When modeling an output, you have to make sure you are creating the most applicable and accurate model as you can. A common technique to do this is through something call stepwise functions.  Stepwise functions iteratively add and remove predictors in your predictive model in order to find the subset of variables in the data set resulting in the best performing model that has the lowest prediction error. Many models and programs do this automatically, so you don't have to worry about it in most machine learning algorithms. However, it is important to understand how to do this to understand modeling in general.  
+
+First, you must create a model. Lets create a simple linear regression off of the 'mtcars' dataset, a common dataset for practicing these kinds of things that comes commonly with R
+
+```{r mtcars}
+data<-mtcars
+str(data)
+```
+
+So we see that the mtcars dataset has 11 variables and 32 observations or samples of that data.  Not enough to get a large trustworthy model out of, but definitely enough to get rolling on some examples.
+
+Lets first create a model predicting just miles per gallon based on all the variables in our dataset.  We will also split this data into testing and training sets, since that is good practice and common for data scientists to do.
+
+```{r model creation}
+sample_size<-floor(0.75*nrow(mtcars))
+set.seed(206) #GoSeattle
+train_ind=sample(seq_len(nrow(mtcars)),size=sample_size)
+train<-mtcars[train_ind,]
+test<-mtcars[-train_ind,]
+model<-lm(mpg~., data=train)
+```
+
+So we have created a model and assigned it to the variable "model" utilizing our new training set called train.  This is a simple linear regression model that we haven't put any parameters on since that is a lesson for a different time.  We can see what are the effects of the model currently
+
+```{r model first pass}
+summary(model)
+```
+
+Looking pretty good, if I do say so myself. The R^2 metrics are what we are primarly looking at at the beginning, which look good and predictive with the adjusted R^2 being at 0.7935.  However, there are a lot of variables that are not predictive.  We should remove them to get rid of dead weight.
+
+One can eliminate variables in bulk at this point, removing insignificant values so we just have the most predictive ones. However, the better solution is remove one or add one back in over time so it becomes for discrete in approach.  This is what forward and backward selection is, where a variable is added or subtracting from the model and it is rerun. You can also combine them and get a stepwise selection, where you add or subtract variables in any order to lower an overall accuracy metric.  
+
+Definitions:
+- Forward Selection: You start with an empty model, and keep adding variables in the order of their significance to the model (based on their p-value). Forward selection stops when you add a variable and the predictiveness gets worse
+- Backward Selection: You start with a full model, and keep subtracting variables in the order of their significance to the model (based on their p-value). Backward selection stops when you subtract a variable and the predictiveness gets worse
+- Stepwise Selection: A combination of forward and backward selection, where you constantly add or subtract variables until you get the lowest possible predictiveness.
+
+For example, lets run some comparisons on our created model!
+```{r stepwise}
+stepping_forward<-stepAIC(model, direction="forward", trace=T) #Start with nothing, keep adding
+stepping_backward<-stepAIC(model, direction="backward", trace=T) #Start with everything, trim down
+stepping_bothwards<-stepAIC(model, direction="both", trace=T) #Find the best combination with adding and subtracting variables throughout the model at different times
+summary(stepping_forward)
+summary(stepping_backward)
+summary(stepping_bothwards)
+```
+
+Wow! Look how more predictive our backwards and stepwise model becomes by enacting a stepwise (both directions) model.  We use AIC as the barometer for judging the predictiveness, which we are able to then drop by quite a bit to then make our new adjusted R^2 at 0.8503 with three variables that are statistically significant! These are the same because we constantly added or subtracted the most significant variables, which was done 
+
+What happened to our forward selection? Well, we just kept adding variables and never got worse... so we went one direction and ended with having every variable.
