@@ -11,7 +11,7 @@ parameters:
 return: a pandas data frame with the flags for each column, flag=1 means outlier detected and 0 = no outlier
 
 Example:
-```
+```python
 out_df = flag_outliers(df=df,excludes=['datetime'])
     for c in out_df.columns:
         if "outlier_flag" in c:
@@ -31,7 +31,8 @@ parameters:
 return: a pandas data frame with the flags for each column, flag=1 means outlier detected and 0 = no outlier
 
 Example:
-``` out_df = quantile_outlier(df=df,low_prob=0.01,high_prob=0.99,excludes=['datetime'])
+```python 
+    out_df = quantile_outlier(df=df,low_prob=0.01,high_prob=0.99,excludes=['datetime'])
     for c in out_df.columns:
         if "quantile_outlier_flag" in c:
             if  np.max(out_df[c])==1 and np.min(out_df[c])==0:
