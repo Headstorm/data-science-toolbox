@@ -1,4 +1,3 @@
-// instructions about running the code and the dataset and other relevant information. I recommend adding a brief about what the goal of the file is and what is the expected output.
 
 ## Goal: 
 #### Given a CSV file or any other source file, we want to flag numerical column values if they are outside of normal bounds or not. Two methods are implemented 
