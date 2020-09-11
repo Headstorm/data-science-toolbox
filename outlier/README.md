@@ -10,7 +10,7 @@ parameters:
     - excludes: a list of column names to exclude
 return: a pandas data frame with the flags for each column, flag=1 means outlier detected and 0 = no outlier
 
-example:
+Example:
 
 out_df = flag_outliers(df=df,excludes=['datetime'])
     for c in out_df.columns:
@@ -30,7 +30,7 @@ parameters:
     - high_prob: probability for high outlier
 return: a pandas data frame with the flags for each column, flag=1 means outlier detected and 0 = no outlier
 
-example:
+Example:
     out_df = quantile_outlier(df=df,low_prob=0.01,high_prob=0.99,excludes=['datetime'])
     for c in out_df.columns:
         if "quantile_outlier_flag" in c:
