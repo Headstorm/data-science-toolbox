@@ -26,3 +26,5 @@ The general libraries used in Python for data science work are:
 3) SKLearn: Scikit-learn is a free machine learning library for Python. It features various algorithms like support vector machine, random forests, k-neighbours, and k-means. It also supports Python numerical and scientific libraries like NumPy and SciPy.
 
 4) Matplotlib: Matplotlib is a plotting library for the Python programming language and its numerical mathematics extension NumPy.
+
+5) SKLearn.Metrics: an extension of SKLearn that provides easy way to calculate accuracy and other relevant metrics for a model
