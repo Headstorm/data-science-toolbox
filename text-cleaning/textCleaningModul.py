@@ -39,7 +39,7 @@ def replace_x_by_tag(text):
 
 def remove_punctuation(text):
     # remove string punctuation
-    PUNCTUATION = str.maketrans("", "", string.punctuation)
+    PUNCTUATION = str.maketrans(string.punctuation, ' '*len(string.punctuation))
     return text.translate(PUNCTUATION)
 
 
@@ -72,40 +72,41 @@ def count_vector(text):
 
 def tfidf(documents):
     no_features = 1000
-	tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_features=no_features, stop_words='english')
-	tfidf = tfidf_vectorizer.fit_transform(documents)
-	tfidf_feature_names = tfidf_vectorizer.get_feature_names()
-	print(tfidf_feature_names)
+    tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, max_features=no_features, stop_words='english')
+    tfidf = tfidf_vectorizer.fit_transform(documents)
+    tfidf_feature_names = tfidf_vectorizer.get_feature_names()
+    print(tfidf_feature_names)
 
 
 if __name__ == '__main__':
     # load text
-    text = import_file('pg5200.txt')
+    # text = import_file('pg5200.txt')
+    text = "Your 401k's will crash with Biden. Massive Biden Tax and Regulation increases will destroy all that you have built! Additionally, 180 Million People will lose their Private Healthcare Plans. http://iwillvote.com/MO"
 
     # replace newline by space
     text = replace_newline_by_space(text)
-
+    print(text)
     # to lowercase
     text = to_lowercase(text)
-
+    print(text)
     # replace x by space
     text = replace_x_by_tag(text)
-
+    print(text)
     # remove punctuation
     text = remove_punctuation(text)
-
+    print(text)
     # tokenize text
     tokens = tokenize(text)
-
+    print(tokens)
     # remove stopwords
     tokens = remove_stopwords(tokens)
-
+    print(tokens)
     # stemming the words
-    tokens = stemming(tokens)
-
+    tokens_stem = stemming(tokens)
+    print(tokens_stem)
     # lemmatizing the words
-    tokens = lemmatizing(tokens)
-
+    tokens_lem = lemmatizing(tokens)
+    print(tokens_lem)
     # bag of words
     vector = count_vector(tokens)
 
