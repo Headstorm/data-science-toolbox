@@ -4,7 +4,7 @@ pandasql==0.7.3
 h5py==2.10.0
 tqdm==4.42.1
 pandas==1.0.1
-tensorflow==1.14.0
+tensorflow==1.15.4
 numpy==1.18.1
 joblib==0.14.1
 Keras==2.1.0
