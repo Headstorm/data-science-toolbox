@@ -1,0 +1,5 @@
+.idea/*
+__pycache__/*
+.vs/*
+src/__pycache__/*
+tmp/*
