@@ -1,8 +1,8 @@
-# Batch vs Stream Processing in Data Analyics and Machine Learning: an Overview in 2021
+# Batch vs Stream Processing in Data Analyics: an Overview in 2021
 
 ## Introduction
 
-This is a note about batch processing vs stream processing, their technologies and toolstacks, especially for the use cases of data analytics and machine learning.
+This is a note about batch processing vs stream processing, their technologies and toolstacks, especially for the use cases of data analytics.
 
 ## Batch Processing
 
