@@ -6,13 +6,16 @@ This is a note about batch processing vs stream processing, their technologies a
 
 ## Batch Processing
 
+This is the traditional data analytics paradigm. Imagine the following scenario: a financial institute such as a bank collects data during the working hours, and performs analytics on the collected data during off hours. There is a clear gap between the data collection/loading step and the analytics step, and the data comes in batches, a bounded format.
+
 ## Batch Processing Technology Landscape
 
 Easy mode. Most companies have used Spark, MapReduce, Hadoop, or a combination of these.
 
 ## Batch is cool, what about stream?
 
-Stream processing, as opposed to batch processing, works with unbounded data instead of bounded data. It is a type of data processing engine designed with infinite data in mind. One can argue batch processing is a special case of stream processing.
+For the same financial institute, now they want to perform analytcis on the fly. Now they need stream processing.
+Stream processing works with unbounded data instead of bounded data in batch processing. It is a type of data processing engine designed with infinite data in mind. One can argue batch processing is a special case of stream processing. Check [here](https://iwringer.wordpress.com/2015/08/03/patterns-for-streaming-realtime-analytics/) for a list of use cases scenarios/patterns where stream processing is needed
 
 ### Important Aspects of Stream Processing
 
@@ -121,7 +124,7 @@ Disadvantages:
 
 ## Reference and additional reading
 
-[1] For a (slightly outdated) casual read, chekc out this medium post: https://medium.com/@chandanbaranwal/spark-streaming-vs-flink-vs-storm-vs-kafka-streams-vs-samza-choose-your-stream-processing-91ea3f04675b
+[1] For a (slightly outdated) casual read, check out this Medium post: https://medium.com/@chandanbaranwal/spark-streaming-vs-flink-vs-storm-vs-kafka-streams-vs-samza-choose-your-stream-processing-91ea3f04675b
 
 [2] For a more serious survey, read this IEEE paper: https://ieeexplore.ieee.org/document/8864052
 
