@@ -61,13 +61,13 @@ Cons:
 
 ### How to Choose?
 
-Before we jump into the actuall framework and tech for streaming, we need to ask ourselves how do we want to choose our framework. Well, it all depends! Several things to consider:
+Before we jump into the actual frameworks for streaming, we need to ask ourselves how do we want to choose our framework. Well, it all depends! Several things to consider:
 
 1. Use cases. Does the use case require a very low latency? What is the minimum requirement for throughput? Is it just a simple use case that should use minimum tooling, or a very involved project?
 2. Future considerations. Are there features/advanced features not needed now, but anticpated to be required in the future?
 3. Existing tech stack. Do we have systems based on Hadoop filesystme/Kafka messaging queue/etc already?
 
-### Stream Processing Tools
+### Stream Processing Frameworks
 
 The following are cited from source [1].
 
