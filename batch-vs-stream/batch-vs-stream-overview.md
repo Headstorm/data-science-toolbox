@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a note about batch processing vs stream processing, their technologies and toolstacks, especially for the use cases of data analytics.
+This is a note about batch processing vs stream processing, their technologies and toolstacks, especially pertained to data analytics.
 
 ## Batch Processing
 
