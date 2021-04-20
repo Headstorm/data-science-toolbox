@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a note about batch processing vs stream processing, their technologies and toolstacks, especially pertained to data analytics.
+This is a note about batch processing vs stream processing, their technologies and toolstacks, especially pertained to data analytics. I intend to use this as a short summary of what I have learned about batch and espeically stream processing, and provide it as a springboard for others. I leave additional readings in the reference section for the interested readers.
 
 ## Batch Processing
 
@@ -36,13 +36,13 @@ naive in-memory-only choice to a persistent state that can be queried and replic
 
 We can categorize most frameworks into two types, based on their programming models. This decides how the streaming engine is built fundamentally.
 
-1. Natrual streaming, aka native streaming. This is the true streaming, a contiuous process that runs forever to process incoming data. Examples: Apache Kafka Stream, Apache Flink.
+1. Natural streaming, aka native streaming. This is the true streaming, a continuous process that runs forever to process incoming data. Examples: Apache Kafka Stream, Apache Flink.
 
 Pros:
 
 * feels natural for streaming
 * low latency
-* state mangement is easy
+* state management is easy
 
 Cons:
 
@@ -57,13 +57,13 @@ Pros:
 
 Cons:
 
-* not nutural streaming
+* not natural streaming
 * higher latency
-* efficient state mangement is a challenge
+* efficient state management is a challenge
 
 ### How to Choose?
 
-Before we jump into the actual frameworks for streaming, we need to ask ourselves how do we want to choose our framework. Well, it all depends! Several things to consider:
+Before we jump into the actual frameworks for streaming, we need to ask ourselves how we want to choose our framework. Well, it all depends! Several things to consider:
 
 1. Use cases. Does the use case require a very low latency? What is the minimum requirement for throughput? Is it just a simple use case that should use minimum tooling, or a very involved project?
 2. Future considerations. Are there features/advanced features not needed now, but anticpated to be required in the future?
