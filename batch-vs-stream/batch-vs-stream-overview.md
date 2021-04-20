@@ -34,6 +34,8 @@ naive in-memory-only choice to a persistent state that can be queried and replic
 
 ### Two Types of Stream Processing and Their Pros/Cons
 
+We can categorize most frameworks into two types, based on their programming models. This decides how the streaming engine is built fundamentally.
+
 1. Natrual streaming, aka native streaming. This is the true streaming, a contiuous process that runs forever to process incoming data. Examples: Apache Kafka Stream, Apache Flink.
 
 Pros:
