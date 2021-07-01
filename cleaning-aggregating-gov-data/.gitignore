@@ -1,0 +1,6 @@
+# python environment files
+pyenv/*
+
+.DS_Store
+*.zip
+*.csv
