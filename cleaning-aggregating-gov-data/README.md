@@ -22,6 +22,6 @@ We can use the US Census Bureau's [geocoding tool](https://geocoding.geo.census.
 
 Then, the shell script `geocode_requests.sh` will send the API requests necessary and handle the response. Be warned, each chunk takes about 20 minutes to do.
 
-## Part 2: Tableau Visualization 
+## Part 3: Tableau Visualization 
 
 To see what the data speaks, we created a visualization using Tableau. By using the "Map" feature in Tableau, we were able to draw boundaries across each zip-code. For varying prices, different colors were choosen (which can be altered as preffered) and displayed on the map. 
