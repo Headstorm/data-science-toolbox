@@ -28,6 +28,7 @@ def clean_final_df(final):
     return final
 
 def filter_non_residential(final):
+    # See 'Residential Building Classifications.pdf'
     final = final [
                     ((final['bldg_class_cd'] >= 1) & (final['bldg_class_cd'] <= 16)) |
                     (final['bldg_class_cd'] == 18) |

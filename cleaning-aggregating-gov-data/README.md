@@ -4,7 +4,7 @@ The purpose of this project is to demonstrate some of the data cleaning and aggr
 
 ## Initial setup
 
-To begin, run the shell script `startup.sh`. This will unzip the raw input data and create the necessary directory structure for this project. Next, install the required Python packages from the `requirements.txt` file.
+To begin, run the shell script `startup.sh`. This will unzip the raw input data and create the necessary directory structure for this project. Next, install the required Python packages from the `requirements.txt` file by navigating to this directory and running the command `pip install -r requirements.txt`.
 
 ## Part 1: Finding the average home values of Dallas-area zip codes
 
