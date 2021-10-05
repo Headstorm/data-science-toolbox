@@ -24,7 +24,7 @@ Then, the shell script `geocode_requests.sh` will send the API requests necessar
 
 ## Part 3: Tableau Visualization 
 
-To see what the data speaks, we created a visualization using Tableau. By using the "Map" feature in Tableau, we were able to draw boundaries across each zip-code. For varying prices, different colors were choosen (which can be altered as preffered) and displayed on the map. 
+To see what the data speaks, we created a visualization using Tableau. By using the "Map" feature in Tableau, we were able to draw boundaries across each zip-code. For varying prices, different colors were choosen (which can be altered as preffered) and displayed on the map. To run the Tableau visualization on your local machine, install Tableau and run TableauViz.twb file. 
 
-<img width="1064" alt="Screen Shot 2021-06-17 at 10 31 39 AM" src="https://user-images.githubusercontent.com/90059087/136083979-9ab12085-0e05-4baf-9d43-0c3d302c5393.png">
+<img width="500" alt="Screen Shot 2021-06-17 at 10 31 39 AM" src="https://user-images.githubusercontent.com/90059087/136083979-9ab12085-0e05-4baf-9d43-0c3d302c5393.png">
 
